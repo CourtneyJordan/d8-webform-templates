@@ -1,0 +1,109 @@
+introduction:
+  '#markup': '<p>Below is a test webform the qa team uses for testing. Expand the following categories to view and complete the sections.</p>'
+basic_elements:
+  '#title': 'Basic Elements'
+  '#markup': '<p><em>This section contains all the possible basic elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
+basic_checkbox:
+  '#type': checkbox
+  '#title': 'Enable the Checkbox'
+  '#title_display': inline
+  '#options_display': side_by_side
+  '#option':
+    one: 'enabled basic checkbox'
+hidden_field:
+  '#type': hidden
+  '#title': 'Hidden Field'
+basic_textarea:
+  '#type': textarea
+  '#title': Textarea
+basic_textfield:
+  '#type': textfield
+  '#title': 'Text field'
+advanced_elements:
+  '#title': 'Advanced Elements'
+  '#markup': '<p><em>This section contains all the possible advanced elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
+advanced_autocomplete:
+  '#type': autocomplete
+  '#title': Autocomplete
+  '#autocomplete_items': country_names
+advanced_captcha:
+  '#type': captcha
+  '#title': Captcha
+  '#captcha_title': 'Type a Country Name'
+  '#captcha_description': 'start typing out a country name and click to select the desired item.'
+advanced_code_mirror:
+  '#type': codemirror
+  '#title': CodeMirror
+  '#mode': yaml
+advanced_color:
+  '#type': color
+  '#title': Color
+advanced_email:
+  '#type': email
+  '#title': 'Enter Email Address'
+advanced_email_confirm:
+  '#type': email_confirm
+  '#title': 'Confirm Email'
+  '#states':
+    visible:
+      ':input[name="advanced_email"]':
+        filled: true
+  '#confirm__title': 'Enter Email Again'
+advanced_email_multiple:
+  '#type': email_multiple
+  '#title': 'Enter Multiple Emails'
+  '#states':
+    visible:
+      ':input[name="advanced_email_confirm[mail_2]"]':
+        filled: true
+advanced_mapping:
+  '#type': mapping
+  '#title': advanced_mapping
+  '#source': days
+  '#destination': days
+advanced_number:
+  '#type': number
+  '#title': Number
+  '#min': 0
+  '#max': 10
+  '#step': 1
+advanced_range:
+  '#type': range
+  '#title': Range
+  '#min': 0
+  '#max': 100
+  '#step': 1
+  '#output': right
+  '#output__field_prefix': $
+  '#output__field_suffix': '.00'
+advanced_rating:
+  '#type': rating
+  '#title': Rating
+advanced_search:
+  '#type': search
+  '#title': Search
+advanced_signature:
+  '#type': signature
+  '#title': Signature
+advanced_telephone:
+  '#type': tel
+  '#title': Telephone
+advanced_tos:
+  '#type': terms_of_service
+  '#terms_content': 'These are the terms of service.'
+advanced_textformat:
+  '#type': text_format
+  '#title': 'Advanced Textformat'
+  '#allowed_formats':
+    basic_html: basic_html
+    webny_enhanced_wysiwyg: webny_enhanced_wysiwyg
+    webny_wysiwyg_frame_editor: webny_wysiwyg_frame_editor
+advanced_toggle:
+  '#type': toggle
+  '#title': Toggle
+advanced_url:
+  '#type': url
+  '#title': URL
+advanced_value:
+  '#type': value
+  '#title': 'Advanced Value'
