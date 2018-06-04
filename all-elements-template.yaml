@@ -1,109 +1,280 @@
 introduction:
+  '#type': markup
   '#markup': '<p>Below is a test webform the qa team uses for testing. Expand the following categories to view and complete the sections.</p>'
 basic_elements:
+  '#type': fieldset
   '#title': 'Basic Elements'
+  '#title_display': before
   '#markup': '<p><em>This section contains all the possible basic elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
-basic_checkbox:
-  '#type': checkbox
-  '#title': 'Enable the Checkbox'
-  '#title_display': inline
-  '#options_display': side_by_side
-  '#option':
-    one: 'enabled basic checkbox'
-hidden_field:
-  '#type': hidden
-  '#title': 'Hidden Field'
-basic_textarea:
-  '#type': textarea
-  '#title': Textarea
-basic_textfield:
-  '#type': textfield
-  '#title': 'Text field'
+  basic_checkbox:
+    '#type': checkbox
+    '#title': 'Enable the Checkbox'
+    '#title_display': inline
+    '#options_display': side_by_side
+    '#option':
+      one: 'enabled basic checkbox'
+  hidden_field:
+    '#type': hidden
+    '#title': 'Hidden Field'
+  basic_textarea:
+    '#type': textarea
+    '#title': Textarea
+  basic_textfield:
+    '#type': textfield
+    '#title': 'Text field'
 advanced_elements:
+  '#type': fieldset
   '#title': 'Advanced Elements'
+  '#title_display': before
   '#markup': '<p><em>This section contains all the possible advanced elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
-advanced_autocomplete:
-  '#type': autocomplete
-  '#title': Autocomplete
-  '#autocomplete_items': country_names
-advanced_captcha:
-  '#type': captcha
-  '#title': Captcha
-  '#captcha_title': 'Type a Country Name'
-  '#captcha_description': 'start typing out a country name and click to select the desired item.'
-advanced_code_mirror:
-  '#type': codemirror
-  '#title': CodeMirror
-  '#mode': yaml
-advanced_color:
-  '#type': color
-  '#title': Color
-advanced_email:
-  '#type': email
-  '#title': 'Enter Email Address'
-advanced_email_confirm:
-  '#type': email_confirm
-  '#title': 'Confirm Email'
-  '#states':
-    visible:
-      ':input[name="advanced_email"]':
-        filled: true
-  '#confirm__title': 'Enter Email Again'
-advanced_email_multiple:
-  '#type': email_multiple
-  '#title': 'Enter Multiple Emails'
-  '#states':
-    visible:
-      ':input[name="advanced_email_confirm[mail_2]"]':
-        filled: true
-advanced_mapping:
-  '#type': mapping
-  '#title': advanced_mapping
-  '#source': days
-  '#destination': days
-advanced_number:
-  '#type': number
-  '#title': Number
-  '#min': 0
-  '#max': 10
-  '#step': 1
-advanced_range:
-  '#type': range
-  '#title': Range
-  '#min': 0
-  '#max': 100
-  '#step': 1
-  '#output': right
-  '#output__field_prefix': $
-  '#output__field_suffix': '.00'
-advanced_rating:
-  '#type': rating
-  '#title': Rating
-advanced_search:
-  '#type': search
-  '#title': Search
-advanced_signature:
-  '#type': signature
-  '#title': Signature
-advanced_telephone:
-  '#type': tel
-  '#title': Telephone
-advanced_tos:
-  '#type': terms_of_service
-  '#terms_content': 'These are the terms of service.'
-advanced_textformat:
-  '#type': text_format
-  '#title': 'Advanced Textformat'
-  '#allowed_formats':
-    basic_html: basic_html
-    webny_enhanced_wysiwyg: webny_enhanced_wysiwyg
-    webny_wysiwyg_frame_editor: webny_wysiwyg_frame_editor
-advanced_toggle:
-  '#type': toggle
-  '#title': Toggle
-advanced_url:
-  '#type': url
-  '#title': URL
-advanced_value:
-  '#type': value
-  '#title': 'Advanced Value'
+  advanced_autocomplete:
+    '#type': autocomplete
+    '#title': Autocomplete
+    '#autocomplete_items': country_names
+  advanced_captcha:
+    '#type': captcha
+    '#title': Captcha
+    '#captcha_title': 'Type a Country Name'
+    '#captcha_description': 'start typing out a country name and click to select the desired item.'
+  advanced_code_mirror:
+    '#type': codemirror
+    '#title': CodeMirror
+    '#mode': yaml
+  advanced_color:
+    '#type': color
+    '#title': Color
+  advanced_email:
+    '#type': email
+    '#title': 'Enter Email Address'
+  advanced_email_confirm:
+    '#type': email_confirm
+    '#title': 'Confirm Email'
+    '#states':
+      visible:
+        ':input[name="advanced_email"]':
+          filled: true
+    '#confirm__title': 'Enter Email Again'
+  advanced_email_multiple:
+    '#type': email_multiple
+    '#title': 'Enter Multiple Emails'
+    '#states':
+      visible:
+        ':input[name="advanced_email_confirm[mail_2]"]':
+          filled: true
+  advanced_mapping:
+    '#type': mapping
+    '#title': advanced_mapping
+    '#source': days
+    '#destination': days
+  advanced_number:
+    '#type': number
+    '#title': Number
+    '#min': 0
+    '#max': 10
+    '#step': 1
+  advanced_range:
+    '#type': range
+    '#title': Range
+    '#min': 0
+    '#max': 100
+    '#step': 1
+    '#output': right
+    '#output__field_prefix': $
+    '#output__field_suffix': '.00'
+  advanced_rating:
+    '#type': rating
+    '#title': Rating
+  advanced_search:
+    '#type': search
+    '#title': Search
+  advanced_signature:
+    '#type': signature
+    '#title': Signature
+  advanced_telephone:
+    '#type': tel
+    '#title': Telephone
+  advanced_tos:
+    '#type': terms_of_service
+    '#terms_content': 'These are the terms of service.'
+  advanced_textformat:
+    '#type': text_format
+    '#title': 'Advanced Textformat'
+    '#allowed_formats':
+      basic_html: basic_html
+      webny_enhanced_wysiwyg: webny_enhanced_wysiwyg
+      webny_wysiwyg_frame_editor: webny_wysiwyg_frame_editor
+  advanced_toggle:
+    '#type': toggle
+    '#title': Toggle
+  advanced_url:
+    '#type': url
+    '#title': URL
+  advanced_value:
+    '#type': value
+    '#title': 'Advanced Value'
+
+composite_elements:
+  '#type': fieldset
+  '#title': 'Composite Elements'
+  '#title_display': before
+  '#markup': '<p><em>This section contains all the possible composite elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
+  composite_address:
+    '#type': address
+    '#title': Address
+  composite_contact:
+    '#type': contact
+    '#title': 'Composite Contact'
+  composite_custom_composite:
+    '#type': custom_composite
+    '#title': 'Custom Composite'
+    '#element':
+      first_name:
+        '#type': textfield
+        '#title': 'First name'
+      last_name:
+        '#type': textfield
+        '#title': 'Last name'
+      gender:
+        '#type': select
+        '#options': gender
+        '#title': Gender
+      martial_status:
+        '#type': webform_select_other
+        '#options': marital_status
+        '#title': 'Martial status'
+      employment_status:
+        '#type': webform_select_other
+        '#options': employment_status
+        '#title': 'Employment status'
+      age:
+        '#type': number
+        '#title': Age
+  composite_link:
+    '#type': webform_link
+    '#title': 'Composite Link'
+  composite_location:
+    '#type': details
+    '#title': 'Composite Location'
+    '#title_display': before
+    '#markup': '<p><em>This element doens't work unless you have a paid google account to register the google map api.</p>'
+  composite_name:
+    '#type': name
+    '#title': 'Composite Name'
+    '#title_display': before
+  composite_telephone:
+    '#type': telephone
+    '#title': 'Composite Telephone'
+    '#title_display': before
+
+markup_elements:
+  '#type': fieldset
+  '#title': 'Markup Elements'
+  '#title_display': before
+  '#markup': '<p><em>This section contains all the possible markup elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
+#  markup_advanced_html_text:
+#  markup_basic_html:
+#  markup_horizontal_rule:
+#  markup_message:
+
+file_upload_elements:
+  '#type': fieldset
+  '#title': 'File Upload Elements'
+  '#title_display': before
+  '#markup': '<p><em>This section contains all the possible file upload elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
+#  file_upload_audio:
+#  file_upload_doc:
+#  file_upload_file:
+#  file_upload_image:
+#  file_upload_video:
+
+options_elements:
+  '#type': fieldset
+  '#title': 'Options Elements'
+  '#title_display': before
+  '#markup': '<p><em>This section contains all the possible file upload elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
+#  options_buttons:
+#  options_buttons_other:
+#  options_checkboxes:
+#  options_checkboxes_other:
+#  options_likert:
+#  options_radios:
+#  options_radios_other:
+#  options_select:
+#  options_select_other:
+#  options_table_select:
+#  options_table_select_sort:
+#  options_table_sort:
+#  options_toggles:
+#  checkboxes:
+#    '#type': checkboxes
+#    '#title': Checkboxes
+#    '#options_display': side_by_side
+#    '#options_description_display': help
+#    '#options_description_display': description
+#    '#options':
+#      one: One
+#      two: 'Two -- This is help text.'
+#      three: 'Three -- This is a descripion.'
+
+options_elements:
+  '#type': fieldset
+  '#title': 'Computed Elements'
+  '#title_display': before
+  '#markup': '<p><em>This section contains all the possible computed elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
+#  computed_token:
+#  computed_twig:
+
+containiers:
+  '#type': fieldset
+  '#title': 'Containiers'
+  '#title_display': before
+  '#markup': '<p><em>This section contains all the possible containiers elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
+#  containiers_container:
+#  containiers_details:
+#  containiers_fieldset:
+#  containiers_flexbox_layout:
+#  containiers_item:
+#  containiers_section:
+
+date_time_elements:
+  '#type': fieldset
+  '#title': 'Date and Time Elements'
+  '#title_display': before
+  '#markup': '<p><em>This section contains all the possible date and time elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
+#  date_time_date:
+#  date_time_dateandtime:
+#  date_time_list:
+#  date_time_time:
+
+entity_reference_elements:
+  '#type': fieldset
+  '#title': 'Entity Reference Elements'
+  '#title_display': before
+  '#markup': '<p><em>This section contains all the possible entity reference elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
+#  entity_reference_autocomplete:
+#  entity_reference_checkboxes:
+#  entity_reference_radios:
+#  entity_reference_select:
+#  entity_reference_checkboxes:
+#  entity_reference_select:
+
+markup:
+  '#type': fieldset
+  '#title': 'Markup'
+  '#title_display': before
+  '#markup': '<p><em>This section contains all the possible markup that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
+#  markup_label:
+
+buttons:
+  '#type': fieldset
+  '#title': 'Buttons'
+  '#title_display': before
+  '#markup': '<p><em>The submit button is located at the bottom of the page.</em></p>'
+
+
+other_elements:
+  '#type': fieldset
+  '#title': 'Other Elements'
+  '#title_display': before
+  '#markup': '<p><em>This section contains all the possible other elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
+#  other_elements_generic:
