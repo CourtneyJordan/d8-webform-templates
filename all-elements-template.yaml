@@ -30,7 +30,7 @@ advanced_elements:
   advanced_autocomplete:
     '#type': autocomplete
     '#title': Autocomplete
-    '#autocomplete_items': country_names
+    '#autocomplete_items': state_province_names
   advanced_captcha:
     '#type': captcha
     '#title': Captcha
@@ -75,18 +75,16 @@ advanced_elements:
   advanced_range:
     '#type': range
     '#title': Range
-    '#min': 0
-    '#max': 100
-    '#step': 1
+    '#min': '0'
+    '#max': '500'
+    '#step': '1'
+    '#range__output': true
     '#output': right
     '#output__field_prefix': $
     '#output__field_suffix': '.00'
   advanced_rating:
     '#type': rating
     '#title': Rating
-  advanced_search:
-    '#type': search
-    '#title': Search
   advanced_signature:
     '#type': signature
     '#title': Signature
@@ -112,7 +110,6 @@ advanced_elements:
   advanced_value:
     '#type': value
     '#title': 'Advanced Value'
-
 composite_elements:
   '#type': fieldset
   '#title': 'Composite Elements'
@@ -146,9 +143,6 @@ composite_elements:
         '#type': webform_select_other
         '#options': employment_status
         '#title': 'Employment status'
-      age:
-        '#type': number
-        '#title': Age
     '#description': 'select how many rows you would liek to add to the table. Once completed click the add button.'
   composite_link:
     '#type': webform_link
@@ -161,7 +155,6 @@ composite_elements:
     '#type': telephone
     '#title': 'Composite Telephone'
     '#title_display': before
-
 file_upload_elements:
   '#type': fieldset
   '#title': 'File Upload Elements'
@@ -169,30 +162,29 @@ file_upload_elements:
   '#markup': '<p><em>This section contains all the possible file upload elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
   file_upload_audio:
     '#type': audio_file
-    '#title': 'File Upload Audio'
+    '#title': 'Audio File Upload'
     '#multiple': true
     '#title_display': before
   file_upload_doc:
     '#type': document_file
-    '#title': 'File Upload Doc'
+    '#title': 'Doc File Upload'
     '#multiple': true
     '#title_display': before
   file_upload_file:
     '#type': managed_file
-    '#title': 'File Upload File'
+    '#title': 'File Upload'
     '#multiple': true
     '#title_display': before
   file_upload_image:
     '#type': image_file
-    '#title': 'File Upload Image'
+    '#title': 'Image File Upload'
     '#multiple': true
     '#title_display': before
   file_upload_video:
     '#type': video_file
-    '#title': 'File Upload Video'
+    '#title': 'Video File Upload'
     '#multiple': true
     '#title_display': before
-
 options_elements:
   '#type': fieldset
   '#title': 'Options Elements'
@@ -202,7 +194,7 @@ options_elements:
     '#type': checkboxes
     '#title': Checkboxes
     '#options_display': side_by_side
-    '#options_description_display': help 
+    '#options_description_display': help
     '#options':
       one: One
       two: Two
@@ -291,13 +283,11 @@ options_elements:
     '#type': checkboxes
     '#title': Checkboxes
     '#options_display': side_by_side
-    '#options_description_display': help
     '#options_description_display': description
     '#options':
       one: One
       two: 'Two -- This is help text.'
       three: 'Three -- This is a descripion.'
-
 date_time_elements:
   '#type': fieldset
   '#title': 'Date and Time Elements'
@@ -325,17 +315,11 @@ entity_reference_elements:
     '#title': 'Entity autocomplete'
     '#target_type': user
     '#selection_handler': 'default:user'
-    '#selection_settings':
+    '#selection_settings': null
   entity_reference_checkboxes:
-    '#type': entity_checkboxes
-    '#title': 'Entity checkboxes'
-    '#target_type': user
-    '#selection_handler': 'default:user'
-    '#selection_settings':
-      include_anonymous: true
-    '#options':
-      1: Administrator
-      0: Anonymous
+    '#type': term_checkboxes
+    '#title': 'Term checkboxes'
+    '#vocabulary': tags
   entity_reference_radios:
     '#type': entity_radios
     '#title': 'Entity radios'
@@ -346,26 +330,6 @@ entity_reference_elements:
     '#options':
       1: Administrator
       0: Anonymous
-  entity_reference_select:
-    '#type': entity_select
-    '#title': 'Entity select'
-    '#target_type': user
-    '#selection_handler': 'default:user'
-    '#selection_settings':
-      include_anonymous: true  
-  entity_reference_select_multiple:
-    '#type': entity_select
-    '#title': 'Entity select multiple'
-    '#target_type': user
-    '#selection_handler': 'default:user'
-    '#selection_settings':
-      include_anonymous: true
-    '#multiple': true
-    '#select2': true  
-  entity_reference_checkboxes:
-    '#type': term_checkboxes
-    '#title': 'Term checkboxes'
-    '#vocabulary': tags
   entity_reference_select:
     '#type': term_select
     '#title': 'Term select'
