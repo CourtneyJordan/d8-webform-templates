@@ -84,9 +84,6 @@ advanced_elements:
   advanced_rating:
     '#type': rating
     '#title': Rating
-  advanced_search:
-    '#type': search
-    '#title': Search
   advanced_signature:
     '#type': signature
     '#title': Signature
