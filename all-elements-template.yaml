@@ -117,7 +117,7 @@ composite_elements:
   '#type': fieldset
   '#title': 'Composite Elements'
   '#title_display': before
-  '#markup': '<p><em>This section contains all the possible composite elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
+  '#markup': '<p><em>This section contains all the possible composite elements that could be added to a webform. Please test all available fields to ensure they are working properly. <strong>NOTE the location element does not work unless you have a paid google account to register the google map api</strong>.</em></p>'
   composite_address:
     '#type': address
     '#title': Address
@@ -152,11 +152,6 @@ composite_elements:
   composite_link:
     '#type': webform_link
     '#title': 'Composite Link'
-  composite_location:
-    '#type': details
-    '#title': 'Composite Location'
-    '#title_display': before
-    '#markup': '<p><em>This element doens't work unless you have a paid google account to register the google map api.</p>'
   composite_name:
     '#type': name
     '#title': 'Composite Name'
@@ -166,115 +161,217 @@ composite_elements:
     '#title': 'Composite Telephone'
     '#title_display': before
 
-markup_elements:
-  '#type': fieldset
-  '#title': 'Markup Elements'
-  '#title_display': before
-  '#markup': '<p><em>This section contains all the possible markup elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
-#  markup_advanced_html_text:
-#  markup_basic_html:
-#  markup_horizontal_rule:
-#  markup_message:
-
 file_upload_elements:
   '#type': fieldset
   '#title': 'File Upload Elements'
   '#title_display': before
   '#markup': '<p><em>This section contains all the possible file upload elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
-#  file_upload_audio:
-#  file_upload_doc:
-#  file_upload_file:
-#  file_upload_image:
-#  file_upload_video:
+  file_upload_audio:
+    '#type': audio_file
+    '#title': 'File Upload Audio'
+    '#multiple': true
+    '#title_display': before
+  file_upload_doc:
+    '#type': document_file
+    '#title': 'File Upload Doc'
+    '#multiple': true
+    '#title_display': before
+  file_upload_file:
+    '#type': managed_file
+    '#title': 'File Upload File'
+    '#multiple': true
+    '#title_display': before
+  file_upload_image:
+    '#type': image_file
+    '#title': 'File Upload Image'
+    '#multiple': true
+    '#title_display': before
+  file_upload_video:
+    '#type': video_file
+    '#title': 'File Upload Video'
+    '#multiple': true
+    '#title_display': before
 
 options_elements:
   '#type': fieldset
   '#title': 'Options Elements'
   '#title_display': before
   '#markup': '<p><em>This section contains all the possible file upload elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
-#  options_buttons:
-#  options_buttons_other:
-#  options_checkboxes:
-#  options_checkboxes_other:
-#  options_likert:
-#  options_radios:
-#  options_radios_other:
-#  options_select:
-#  options_select_other:
-#  options_table_select:
-#  options_table_select_sort:
-#  options_table_sort:
-#  options_toggles:
-#  checkboxes:
-#    '#type': checkboxes
-#    '#title': Checkboxes
-#    '#options_display': side_by_side
-#    '#options_description_display': help
-#    '#options_description_display': description
-#    '#options':
-#      one: One
-#      two: 'Two -- This is help text.'
-#      three: 'Three -- This is a descripion.'
-
-options_elements:
-  '#type': fieldset
-  '#title': 'Computed Elements'
-  '#title_display': before
-  '#markup': '<p><em>This section contains all the possible computed elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
-#  computed_token:
-#  computed_twig:
-
-containiers:
-  '#type': fieldset
-  '#title': 'Containiers'
-  '#title_display': before
-  '#markup': '<p><em>This section contains all the possible containiers elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
-#  containiers_container:
-#  containiers_details:
-#  containiers_fieldset:
-#  containiers_flexbox_layout:
-#  containiers_item:
-#  containiers_section:
+  options_checkboxes:
+    '#type': checkboxes
+    '#title': Checkboxes
+    '#options_display': side_by_side
+    '#options_description_display': help 
+    '#options':
+      one: One
+      two: Two
+      three: Three
+  options_likert:
+    '#type': likert
+    '#title': Likert
+    '#questions':
+      q1: 'Please answer question 1?'
+      q2: 'How about now answering question 2?'
+      q3: 'Finally, here is question 3?'
+    '#answers':
+      1: 1
+      2: 2
+      3: 3
+      4: 4
+      5: 5
+  options_radios:
+    '#type': radios
+    '#title': Radios
+    '#options_display': side_by_side
+    '#options':
+      one: One
+      two: Two
+      three: Three
+  options_select:
+    '#type': select
+    '#title': Select
+    '#options':
+      one: One
+      two: Two
+      three: Three
+  options_select2:
+    '#type': select
+    '#title': 'Select (Select2)'
+    '#options':
+      one: One
+      two: Two
+      three: Three
+    '#select2': true
+  options_select_multiple:
+    '#type': select
+    '#title': 'Select multiple'
+    '#options':
+      one: One
+      two: Two
+      three: Three
+    '#multiple': true
+  options_select_multiple_select2:
+    '#type': select
+    '#title': 'Select multiple (Select2)'
+    '#options':
+      one: One
+      two: Two
+      three: Three
+    '#multiple': true
+    '#select2': true
+  options_table_select:
+    '#type': tableselect
+    '#title': 'Table select'
+    '#options':
+      one: One
+      two: Two
+      three: Three
+  options_table_select_sort:
+    '#type': tableselect_sort
+    '#title': 'Tableselect sort'
+    '#options':
+      one: One
+      two: Two
+  options_table_sort:
+    '#type': table_sort
+    '#title': 'Table sort'
+    '#options':
+      one: One
+      two: Two
+      three: Three
+  options_toggles:
+    '#type': toggles
+    '#title': Toggles
+    '#options':
+      one: One
+      two: Two
+      three: Three
+  checkboxes:
+    '#type': checkboxes
+    '#title': Checkboxes
+    '#options_display': side_by_side
+    '#options_description_display': help
+    '#options_description_display': description
+    '#options':
+      one: One
+      two: 'Two -- This is help text.'
+      three: 'Three -- This is a descripion.'
 
 date_time_elements:
   '#type': fieldset
   '#title': 'Date and Time Elements'
   '#title_display': before
   '#markup': '<p><em>This section contains all the possible date and time elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
-#  date_time_date:
-#  date_time_dateandtime:
-#  date_time_list:
-#  date_time_time:
-
+  date_time_date:
+    '#type': date
+    '#title': Date
+  date_time_dateandtime:
+    '#type': datetime
+    '#title': Date/time
+  date_time_list:
+    '#type': datelist
+    '#title': 'Date list'
+  date_time_time:
+    '#type': time
+    '#title': Time
 entity_reference_elements:
   '#type': fieldset
   '#title': 'Entity Reference Elements'
   '#title_display': before
   '#markup': '<p><em>This section contains all the possible entity reference elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
-#  entity_reference_autocomplete:
-#  entity_reference_checkboxes:
-#  entity_reference_radios:
-#  entity_reference_select:
-#  entity_reference_checkboxes:
-#  entity_reference_select:
-
-markup:
-  '#type': fieldset
-  '#title': 'Markup'
-  '#title_display': before
-  '#markup': '<p><em>This section contains all the possible markup that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
-#  markup_label:
-
-buttons:
-  '#type': fieldset
-  '#title': 'Buttons'
-  '#title_display': before
-  '#markup': '<p><em>The submit button is located at the bottom of the page.</em></p>'
-
-
-other_elements:
-  '#type': fieldset
-  '#title': 'Other Elements'
-  '#title_display': before
-  '#markup': '<p><em>This section contains all the possible other elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
-#  other_elements_generic:
+  entity_reference_autocomplete:
+    '#type': entity_autocomplete
+    '#title': 'Entity autocomplete'
+    '#target_type': user
+    '#selection_handler': 'default:user'
+    '#selection_settings':
+  entity_reference_checkboxes:
+    '#type': entity_checkboxes
+    '#title': 'Entity checkboxes'
+    '#target_type': user
+    '#selection_handler': 'default:user'
+    '#selection_settings':
+      include_anonymous: true
+    '#options':
+      1: Administrator
+      0: Anonymous
+  entity_reference_radios:
+    '#type': entity_radios
+    '#title': 'Entity radios'
+    '#target_type': user
+    '#selection_handler': 'default:user'
+    '#selection_settings':
+      include_anonymous: true
+    '#options':
+      1: Administrator
+      0: Anonymous
+  entity_reference_select:
+    '#type': entity_select
+    '#title': 'Entity select'
+    '#target_type': user
+    '#selection_handler': 'default:user'
+    '#selection_settings':
+      include_anonymous: true  
+  entity_reference_select_multiple:
+    '#type': entity_select
+    '#title': 'Entity select multiple'
+    '#target_type': user
+    '#selection_handler': 'default:user'
+    '#selection_settings':
+      include_anonymous: true
+    '#multiple': true
+    '#select2': true  
+  entity_reference_checkboxes:
+    '#type': term_checkboxes
+    '#title': 'Term checkboxes'
+    '#vocabulary': tags
+  entity_reference_select:
+    '#type': term_select
+    '#title': 'Term select'
+    '#vocabulary': tags
+  entity_reference_select_multiple:
+    '#type': term_select
+    '#title': 'Term select multiple'
+    '#vocabulary': tags
+    '#multiple': true
+    '#select2': true
