@@ -84,6 +84,9 @@ advanced_elements:
   advanced_rating:
     '#type': rating
     '#title': Rating
+  advanced_search:
+    '#type': search
+    '#title': Search
   advanced_signature:
     '#type': signature
     '#title': Signature
@@ -146,6 +149,7 @@ composite_elements:
       age:
         '#type': number
         '#title': Age
+    '#description': 'select how many rows you would liek to add to the table. Once completed click the add button.'
   composite_link:
     '#type': webform_link
     '#title': 'Composite Link'
