@@ -19,9 +19,11 @@ basic_elements:
   basic_textarea:
     '#type': textarea
     '#title': Textarea
+    '#description': 'Enter in a paragraph of text.'
   basic_textfield:
     '#type': textfield
     '#title': 'Text field'
+    '#description': 'Add in a line of text.'
 advanced_elements:
   '#type': fieldset
   '#title': 'Advanced Elements'
@@ -29,26 +31,22 @@ advanced_elements:
   '#markup': '<p><em>This section contains all the possible advanced elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
   advanced_autocomplete:
     '#type': autocomplete
-    '#title': Autocomplete
+    '#title': 'Autocomplete - State Names'
+    '#description': 'Start typing a state name and select a state from the drop-down that displays.'
     '#autocomplete_items': state_province_names
   advanced_captcha:
     '#type': captcha
     '#title': Captcha
     '#captcha_title': 'Type a Country Name'
     '#captcha_description': 'start typing out a country name and click to select the desired item.'
-  advanced_code_mirror:
-    '#type': codemirror
-    '#title': CodeMirror
-    '#mode': yaml
-  advanced_color:
-    '#type': color
-    '#title': Color
   advanced_email:
     '#type': email
     '#title': 'Enter Email Address'
+    '#description': 'Enter an email address. Once you add an email address two confirmation email address inputs will be displayed.'
   advanced_email_confirm:
     '#type': email_confirm
     '#title': 'Confirm Email'
+    '#description': 'Confirm an email address twice. Once you add the confirmation email addresses, a new input to add multiple email address will be displayed.'
     '#states':
       visible:
         ':input[name="advanced_email"]':
@@ -63,18 +61,26 @@ advanced_elements:
           filled: true
   advanced_mapping:
     '#type': mapping
-    '#title': advanced_mapping
+    '#title': 'Advanced Mapping for Work Hours'
+    '#description': 'Pick work hours for days of the week.'
     '#source': days
-    '#destination': days
+    '#destination':
+      8to4: '8:00am - 4:00pm'
+      9to5: '9:00am - 5:00pm'
+      10to6: '10:00am - 6:00pm'
+      11to7: '11:00am - 7:00pm'
+      day_off: 'Day Off'
   advanced_number:
     '#type': number
     '#title': Number
+    '#description': 'Enter a random number between 1 - 10.'
     '#min': 0
     '#max': 10
     '#step': 1
   advanced_range:
     '#type': range
     '#title': Range
+    '#description': 'Use the slider to select a number between 1 - 500.'
     '#min': '0'
     '#max': '500'
     '#step': '1'
@@ -85,18 +91,22 @@ advanced_elements:
   advanced_rating:
     '#type': rating
     '#title': Rating
+    '#description': 'Click a star from 1 - 5.'
   advanced_signature:
     '#type': signature
     '#title': Signature
+    '#description': 'Sign a name inside the Signature Box.'
   advanced_telephone:
     '#type': tel
     '#title': Telephone
+    '#description': 'Enter a phone number within the United States.'
   advanced_tos:
     '#type': terms_of_service
     '#terms_content': 'These are the terms of service.'
   advanced_textformat:
     '#type': text_format
     '#title': 'Advanced Textformat'
+    '#description': 'Enter a paragrpgh of text.'
     '#allowed_formats':
       basic_html: basic_html
       webny_enhanced_wysiwyg: webny_enhanced_wysiwyg
@@ -104,9 +114,11 @@ advanced_elements:
   advanced_toggle:
     '#type': toggle
     '#title': Toggle
+    '#description': 'Click to enable to toggle.'
   advanced_url:
     '#type': url
     '#title': URL
+    '#description': 'Enter an internal/external url. If using an external url use http:// or https:// within the link address.'
   advanced_value:
     '#type': value
     '#title': 'Advanced Value'
@@ -118,12 +130,14 @@ composite_elements:
   composite_address:
     '#type': address
     '#title': Address
+    '#description': 'Fill in the fields below.'
   composite_contact:
     '#type': contact
     '#title': 'Composite Contact'
   composite_custom_composite:
     '#type': custom_composite
     '#title': 'Custom Composite'
+    '#description': 'Fill in and select fields in the table. See more items on adding more rows below.'
     '#element':
       first_name:
         '#type': textfield
@@ -154,36 +168,6 @@ composite_elements:
   composite_telephone:
     '#type': telephone
     '#title': 'Composite Telephone'
-    '#title_display': before
-file_upload_elements:
-  '#type': fieldset
-  '#title': 'File Upload Elements'
-  '#title_display': before
-  '#markup': '<p><em>This section contains all the possible file upload elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
-  file_upload_audio:
-    '#type': audio_file
-    '#title': 'Audio File Upload'
-    '#multiple': true
-    '#title_display': before
-  file_upload_doc:
-    '#type': document_file
-    '#title': 'Doc File Upload'
-    '#multiple': true
-    '#title_display': before
-  file_upload_file:
-    '#type': managed_file
-    '#title': 'File Upload'
-    '#multiple': true
-    '#title_display': before
-  file_upload_image:
-    '#type': image_file
-    '#title': 'Image File Upload'
-    '#multiple': true
-    '#title_display': before
-  file_upload_video:
-    '#type': video_file
-    '#title': 'Video File Upload'
-    '#multiple': true
     '#title_display': before
 options_elements:
   '#type': fieldset
@@ -305,38 +289,3 @@ date_time_elements:
   date_time_time:
     '#type': time
     '#title': Time
-entity_reference_elements:
-  '#type': fieldset
-  '#title': 'Entity Reference Elements'
-  '#title_display': before
-  '#markup': '<p><em>This section contains all the possible entity reference elements that could be added to a webform. Please test all available fields to ensure they are working properly.</em></p>'
-  entity_reference_autocomplete:
-    '#type': entity_autocomplete
-    '#title': 'Entity autocomplete'
-    '#target_type': user
-    '#selection_handler': 'default:user'
-    '#selection_settings': null
-  entity_reference_checkboxes:
-    '#type': term_checkboxes
-    '#title': 'Term checkboxes'
-    '#vocabulary': tags
-  entity_reference_radios:
-    '#type': entity_radios
-    '#title': 'Entity radios'
-    '#target_type': user
-    '#selection_handler': 'default:user'
-    '#selection_settings':
-      include_anonymous: true
-    '#options':
-      1: Administrator
-      0: Anonymous
-  entity_reference_select:
-    '#type': term_select
-    '#title': 'Term select'
-    '#vocabulary': tags
-  entity_reference_select_multiple:
-    '#type': term_select
-    '#title': 'Term select multiple'
-    '#vocabulary': tags
-    '#multiple': true
-    '#select2': true
